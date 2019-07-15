@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="browser">
+    <file>browser.png</file>
+    <file>browser.svg</file>
+  </qresource>
+</RCC>
