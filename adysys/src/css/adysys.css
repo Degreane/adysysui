@@ -1,25 +1,13 @@
-    body {
-        min-height:90vh;
-    }
-    .panel-body{
-        background:#f0f0f0;
-    }
-    .panel-header{
-        background:#fff url('images/panel_header_bg.gif') no-repeat top right;
-    }
-    .panel-tool-collapse{
-        background:url('images/arrow_up.gif') no-repeat 0px -3px;
-    }
-    .panel-tool-expand{
-        background:url('images/arrow_down.gif') no-repeat 0px -3px;
-    }
-    .toolbox {
-        width:250px;
-        height:100%;
-        background:#7190E0;
-        padding:5px;
-    }
-    .toolbox-panel {
-        height:auto;
-        padding:10px;
-    }
+body {
+    min-height:90vh;
+}
+.toolbox {
+    width:200px;
+    height:100%;
+    background:#7190E0;
+    padding:5px;
+}
+.toolbox-panel {
+    height:auto;
+    padding:10px;
+}
