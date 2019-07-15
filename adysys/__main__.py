@@ -44,4 +44,3 @@ def parse_args():
 
 cmd_args = parse_args()
 project = adysys.project(cmd_args)
-

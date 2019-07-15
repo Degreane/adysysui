@@ -7,6 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 
+from PyQt5 import Qsci
+from PyQt5 import QtWebEngineWidgets
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -15,13 +17,19 @@ class Ui_projectwindow(object):
         projectwindow.setObjectName("projectwindow")
         projectwindow.resize(1172, 835)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/browser/browser.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(
+            QtGui.QPixmap(":/browser/browser.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off)
         projectwindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(projectwindow)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding,
+            QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setAcceptDrops(True)
         self.centralwidget.setObjectName("centralwidget")
@@ -49,10 +57,13 @@ class Ui_projectwindow(object):
         self.gridLayout.addWidget(self.project_work_area, 1, 0, 1, 1)
         projectwindow.setCentralWidget(self.centralwidget)
         self.ToolBox = QtWidgets.QDockWidget(projectwindow)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding,
+            QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ToolBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.ToolBox.sizePolicy().hasHeightForWidth())
         self.ToolBox.setSizePolicy(sizePolicy)
         self.ToolBox.setMouseTracking(True)
         self.ToolBox.setFloating(False)
@@ -93,23 +104,35 @@ class Ui_projectwindow(object):
 
     def retranslateUi(self, projectwindow):
         _translate = QtCore.QCoreApplication.translate
-        projectwindow.setWindowTitle(_translate("projectwindow", "Project Window"))
-        self.project_browser.setWindowTitle(_translate("projectwindow", "LiveView"))
-        self.project_text_editor.setWindowTitle(_translate("projectwindow", "Code"))
+        projectwindow.setWindowTitle(
+            _translate(
+                "projectwindow",
+                "Project Window"))
+        self.project_browser.setWindowTitle(
+            _translate("projectwindow", "LiveView"))
+        self.project_text_editor.setWindowTitle(
+            _translate("projectwindow", "Code"))
         self.ToolBox.setWindowTitle(_translate("projectwindow", "ToolBox"))
         self.treeWidget.headerItem().setText(0, _translate("projectwindow", "Widgets"))
         __sortingEnabled = self.treeWidget.isSortingEnabled()
         self.treeWidget.setSortingEnabled(False)
-        self.treeWidget.topLevelItem(0).setText(0, _translate("projectwindow", "Button"))
-        self.treeWidget.topLevelItem(0).child(0).setText(0, _translate("projectwindow", "Button"))
-        self.treeWidget.topLevelItem(0).child(1).setText(0, _translate("projectwindow", "Link"))
-        self.treeWidget.topLevelItem(0).child(2).setText(0, _translate("projectwindow", "Push Button"))
-        self.treeWidget.topLevelItem(1).setText(0, _translate("projectwindow", "Input"))
-        self.treeWidget.topLevelItem(1).child(0).setText(0, _translate("projectwindow", "Text"))
-        self.treeWidget.topLevelItem(1).child(1).setText(0, _translate("projectwindow", "Text Area"))
+        self.treeWidget.topLevelItem(0).setText(
+            0, _translate("projectwindow", "Button"))
+        self.treeWidget.topLevelItem(0).child(0).setText(
+            0, _translate("projectwindow", "Button"))
+        self.treeWidget.topLevelItem(0).child(1).setText(
+            0, _translate("projectwindow", "Link"))
+        self.treeWidget.topLevelItem(0).child(2).setText(
+            0, _translate("projectwindow", "Push Button"))
+        self.treeWidget.topLevelItem(1).setText(
+            0, _translate("projectwindow", "Input"))
+        self.treeWidget.topLevelItem(1).child(0).setText(
+            0, _translate("projectwindow", "Text"))
+        self.treeWidget.topLevelItem(1).child(1).setText(
+            0, _translate("projectwindow", "Text Area"))
         self.treeWidget.setSortingEnabled(__sortingEnabled)
-from PyQt5 import Qsci
-from PyQt5 import QtWebEngineWidgets
+
+
 if __name__ == '__main__':
     import resources_rc
 else:
