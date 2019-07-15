@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/adysys.css">
     <script src="/js/jquery-3.4.1.js" defer></script>
     <script src="/js/jquery.easyui.min.js" defer></script>
+    <script src="/js/adysys.js" defer></script>
 
     <title>AdySys Project ({{title}})</title>
 
@@ -18,9 +19,11 @@
 
 <body>
     {% block leftpanel %}
-    {% block tool_box_panel %}
+    {% include 'leftpanel.html' ignore missing %}
 
     {% endblock %}
+    {% block pages %}
+    {% include 'pages.html' ignore missing %}
     {% endblock %}
 </body>
 

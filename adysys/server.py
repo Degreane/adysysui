@@ -23,7 +23,7 @@ async def home(request):
         # page_tpl_path=os.path.join(request['session']['path'],'adysys','src','tpl','adysys.html')
         # with open (page_tpl_path,'r') as fd:
         #     page_tpl=fd.read()
-        response_tpl = env.get_template(name='toolbox_ppael.html')
+        response_tpl = env.get_template(name='designer.html')
         # j2.Template(page_tpl)
         title = os.path.split(request['session']['path'])[-1]
         response_html = response_tpl.render({'title': title})

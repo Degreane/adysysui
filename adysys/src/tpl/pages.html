@@ -1,0 +1,23 @@
+{% block pages %}
+<!-- 
+        pages consist of a tab window 
+        let us construct the tab window first 
+    -->
+<div id="pages-window" class="easyui-window" title="Pages"
+    data-options="collapsible:true,minimizable:true,maximizable:true,closable:false,draggable:true,resizable:true,shadow:true">
+    <!--
+        Now We construct the tab panel 
+    -->
+    <div id="tt" class="easyui-tabs" style="width:100%;height:100%;">
+        <div title="Tab1" style="padding:20px;display:none;">
+            tab1
+        </div>
+        <div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
+            tab2
+        </div>
+        <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="display:none;">
+            tab3
+        </div>
+    </div>
+</div>
+{% endblock %}
