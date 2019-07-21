@@ -13,17 +13,21 @@ empty_html_template = '''
         <meta charset="UTF-8">
         <meta name="author" content="Faysal Al-Banna" />
         <meta name="description" content="AdySys Web UI HTML Builder" />
-        <link rel="stylesheet" type="text/css" href="/css/easyui.css?{{range(1,100)|random}}">
-        <link rel="stylesheet" type="text/css" href="/css/icon.css?{{range(1,100)|random}}">
-        <link rel="stylesheet" type="text/css" href="/css/color.css?{{range(1,100)|random}}">
         <link rel="stylesheet" type="text/css" href="/css/adysys.css?{{range(1,100)|random}}">
-        <script src="/js/jquery-3.4.1.js?{{range(1,100)|random}}" defer></script>
-        <script src="/js/jquery.easyui.min.js?{{range(1,100)|random}}" defer></script>
-        <script src="/js/adysys.js?{{range(1,100)|random}}" defer></script>
-        <title>{{ title }}</title>
+        <link rel="stylesheet" type="text/css" href="/aloha/src/css/aloha.css">
+        <script src="/aloha/src/lib/require.js?{{range(1,1000)|random}}" ></script>
+        <script src="/aloha/src/lib/aloha.js?{{range(1,1000)|random}}"
+        data-aloha-plugins="common/format,common/table,common/list,common/link,common/highlighteditables,common/block,common/undo,common/contenthandler,common/paste,common/commands,common/abbr,common/image,extra/browser,extra/linkbrowser"></script>
+        <title>Build1</title>
     </head>
-    <body>
-
+    <body id='content_body'>
+        <div id='content'>
+        </div>
+    <script defer>
+        Aloha.ready( function() {
+            Aloha.jQuery('#content').aloha();
+        });
+    </script>
     </body>
 </html>
 '''
@@ -95,19 +99,19 @@ async def favicon(request):
     return await response.file_stream(project_path)
 
 
-@app.route('/build/html/<path>', methods=['GET'])
+@app.route('/build/html/<path>', methods=['GET', ], name="getNewPageBuild")
 async def getBuildPage(request, path):
     if not request['session'].get('path'):
         return response.json({'SessionError': path})
     else:
-        page_path = os.path.join(request['session'].get('path'), 'adysys', 'build', 'html', path)
-        return response.html('<h1>{0}</h1>'.format(page_path))
+        # page_path = os.path.join(request['session'].get('path'), 'adysys', 'build', 'html', path)
+        return response.html('{0}'.format(empty_html_template))
         # with open(page_path) as fd:
 
 
-@app.route('/build/html', methods=['POST'])
+@app.route('/build/html', methods=['POST', ], name="setNewPageBuild")
 async def pageRequest(request):
-    # pp(request.body)
+    pp(request.body)
     # pp(request.parsed_args)
     pp(request.form)
     if not request['session'].get('path'):

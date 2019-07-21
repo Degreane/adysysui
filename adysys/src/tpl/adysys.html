@@ -9,11 +9,22 @@
     <link rel="stylesheet" type="text/css" href="/css/icon.css?{{range(1,100)|random}}">
     <link rel="stylesheet" type="text/css" href="/css/color.css?{{range(1,100)|random}}">
     <link rel="stylesheet" type="text/css" href="/css/adysys.css?{{range(1,100)|random}}">
-    <script src="/js/jquery-3.4.1.js?{{range(1,100)|random}}" defer></script>
+    <link rel="stylesheet" type="text/css" href="/aloha/src/css/aloha.css">
+
+    <script src="/js/jquery-3.4.1.js?{{range(1,100)|random}}"></script>
+    <script src='/aloha/src/lib/vendor/jquery-1.7.2.js?{{range(1,1000)|random}}'></script>
     <script src="/js/jquery.easyui.min.js?{{range(1,100)|random}}" defer></script>
     <script src="/js/adysys.js?{{range(1,100)|random}}" defer></script>
-    <script src="/aloha/src/lib/aloha.js?{{range(1,1000)|random}}" defer></script>
-    <script src="/aloha/src/lib/require.js?{{range(1,1000)|random}}" defer></script>
+    <script src="/aloha/src/lib/require.js?{{range(1,1000)|random}}"></script>
+    <script src="/aloha/src/lib/aloha.js?{{range(1,1000)|random}}"
+        data-aloha-plugins="common/format,common/table,common/list,common/link,common/highlighteditables,common/block,common/undo,common/contenthandler,common/paste,common/commands,common/abbr,common/image,extra/browser,extra/linkbrowser"></script>
+    <script defer>
+        Aloha = window.Aloha || {};
+        Aloha.settings = Aloha.settings || {};
+        // Restore the global $ and jQuery variables of your project's jQuery
+        Aloha.settings.jQuery = window.jQuery.noConflict(true);
+    </script>
+
     <title>AdySys Project ({{title}})</title>
 
 </head>

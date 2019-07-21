@@ -2,8 +2,9 @@ $('.toolbox-element').draggable({
     proxy: 'clone'
 })
 $('#newHtmlPage').on('click', function (event) {
-    console.log(event)
     event.preventDefault();
+    console.log(event)
+    alert('clicked')
     var randomId = Math.random() * 10000000
 
     var $newHtmlPage = $('<div id="html_' + randomId + '" class="easyui-droppable"></div>')
@@ -37,6 +38,7 @@ $('#newHtmlPage').on('click', function (event) {
         $newHtmlPage.append($newHtmlPageIFrame)
     }).fail(function (msg) {
         alert(msg['pageCreation'])
+        console.log(msg)
     })
 
 })
