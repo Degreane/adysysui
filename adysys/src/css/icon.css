@@ -68,6 +68,18 @@
 	background:url('icons/more.png') no-repeat center center;
 }
 
+.icon-loading{
+	background:url('images/loading.gif') no-repeat center center;
+}
+.icon-folder{
+	background: url('web-icons/folder-closed.png') no-repeat center center;
+}
+.icon-folder-open{
+	background:url('web-icons/folder-open.svg') no-repeat center center;
+}
+.icon-html-file {
+	background:url('web-icons/html.svg') no-repeat center center;
+}
 
 .icon-mini-add{
 	background:url('icons/mini_add.png') no-repeat center center;

@@ -1,27 +1,34 @@
 {% block tool_box_panel %}
 <div class="toolbox">
-    <div class="easyui-panel toolbox-panel" title="Buttons" collapsible="true">
+    <div class="easyui-panel toolbox-panel" title="Menu .." collapsible="true">
+        <a id="btn" href="#" class="easyui-menubutton"
+            data-options="menu:'#file-menu',iconCls:'icon-folder-open'">File</a>
+        <div id="file-menu" style="width:150px;">
+            <div id='newHtmlPage' data-options="iconCls:'icon-html-file'">New Html</div>
+            <div data-options="iconCls:'icon-redo'">Redo</div>
+            <div class="menu-sep"></div>
+            <div>Cut</div>
+            <div>Copy</div>
+            <div>Paste</div>
+            <div class="menu-sep"></div>
+            <div data-options="iconCls:'icon-remove'">Delete</div>
+            <div>Select All</div>
+        </div>
+    </div>
+    <div class="easyui-panel toolbox-panel" title="Buttons" collapsible="true" collapsed="true">
         <div class="easyui-draggable" data-options="handle:'#inputButton',proxy:'clone',revert:true"
             id='divInputButton'>
-            <input type="button" id="inputButton">
+            <input type="button" id="inputButton" value="Button">
         </div>
 
     </div>
-    <br />
-    <div class="easyui-panel toolbox-panel" title="File and Folder Tasks" collapsible="true">
-        Make a new folder<br />
-        Publish this folder to the Web<br />
-        Share this folder
-    </div>
-    <br />
     <div class="easyui-panel toolbox-panel" title="Other Places" collapsible="true" collapsed="true">
         New York<br />
         My Pictures<br />
         My Computer<br />
         My Network Places
     </div>
-    <br />
-    <div class="easyui-panel toolbox-panel" title="Details" collapsible="true">
+    <div class="easyui-panel toolbox-panel" title="Details" collapsible="true" collapsed="true">
         My documents<br />
         File folder<br /><br />
         Date modified: Oct.3rd 2010

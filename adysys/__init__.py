@@ -7,6 +7,7 @@ from threading import Thread
 import subprocess
 import asyncio
 import sysrsync
+import time
 
 
 class project():
@@ -74,9 +75,10 @@ class project():
                         sys.exit()
         cwd = os.getcwd()
         os.chdir(os.path.join(cwd, 'adysys'))
-        subprocess.run(['gunicorn', 'server:app', '-D', '--error-logfile', '../sserver_err.log', '--disable-redirect-access-to-syslog', '--access-logfile', '../sserver_access.log', '--bind', '0.0.0.0:6910', '--worker-class', 'sanic.worker.GunicornWorker', '--reload', '-p', '../sserver.pid'])
+        # subprocess.run(['gunicorn', 'server:app', '-D', '--error-logfile', '../sserver_err.log', '--access-logfile', '../sserver_access.log', '--log-level', 'debug', '--bind', '0.0.0.0:6910', '--worker-class', 'sanic.worker.GunicornWorker', '--reload', '-p', '../sserver.pid'])
         # subprocess.run(['gunicorn', 'server:app', '--error-logfile', '../sserver_err.log', '--disable-redirect-access-to-syslog', '--access-logfile', '../sserver_access.log', '--bind', '0.0.0.0:6910', '--worker-class', 'sanic.worker.GunicornWorker', '--reload', '-p', '../sserver.pid'])
-
+        subprocess.run(['gunicorn', 'server:app', '--config', '../gunicorn.cfg', '-p', '../sserver.pid'])
+        time.sleep(1)
         os.chdir(cwd)
 
     def ___start_gui(self):

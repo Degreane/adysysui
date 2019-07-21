@@ -42,7 +42,7 @@ class ProjectWindow(QtWidgets.QMainWindow):
 
     def getPageContent(self, data):
         self.html = data
-        print(self.html)
+        # print(self.html)
 
     def _setupUI(self):
 
@@ -90,6 +90,7 @@ class ProjectWindow(QtWidgets.QMainWindow):
         # Define Browser WIndow (WebView)
         self.ProjectWebBrowser = QtWebEngineWidgets.QWebEngineView(
             self.ProjectWebBrowserMDI)
+        # help(self.ProjectWebBrowser)
         self.ProjectWebBrowser.setMinimumWidth(
             self.ProjectWebBrowserMDI.width())
         self.ProjectWebBrowser.setMinimumHeight(
@@ -104,23 +105,24 @@ class ProjectWindow(QtWidgets.QMainWindow):
             self.ProjectWebBrowser, 0, 0, 1, 1)
 
         self.WorkAreaMDI.addSubWindow(self.ProjectWebBrowserMDI)
-        self.ProjectWebBrowserMDI.show()
+        self.ProjectWebBrowserMDI.showMaximized()
 
         # Define ToolBox
-        self.ProjectToolBox = QtWidgets.QDockWidget(self.ui)
-        self.ProjectToolBox.setObjectName('AdySysToolBox')
-        self.ProjectToolBox.setWindowTitle('ToolBox')
-        self.ProjectToolBox.setFloating(False)
-        # Define size policy
-        sizepolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Expanding,
-            QtWidgets.QSizePolicy.Expanding)
-        sizepolicy.setHorizontalStretch(0)
-        sizepolicy.setVerticalStretch(0)
-        sizepolicy.setHeightForWidth(True)
-        self.ProjectToolBox.setSizePolicy(sizepolicy)
-        self.ui.addDockWidget(QtCore.Qt.DockWidgetArea(1), self.ProjectToolBox)
+        # self.ProjectToolBox = QtWidgets.QDockWidget(self.ui)
+        # self.ProjectToolBox.setObjectName('AdySysToolBox')
+        # self.ProjectToolBox.setWindowTitle('ToolBox')
+        # self.ProjectToolBox.setFloating(False)
+        # # Define size policy
+        # sizepolicy = QtWidgets.QSizePolicy(
+        #     QtWidgets.QSizePolicy.Expanding,
+        #     QtWidgets.QSizePolicy.Expanding)
+        # sizepolicy.setHorizontalStretch(0)
+        # sizepolicy.setVerticalStretch(0)
+        # sizepolicy.setHeightForWidth(True)
+        # self.ProjectToolBox.setSizePolicy(sizepolicy)
+        # self.ui.addDockWidget(QtCore.Qt.DockWidgetArea(1), self.ProjectToolBox)
         # Define ToolBox Widgets
+        # Tool Box Shall be designed in the web page itself. ;-)
 
     def resizeEvent(self, QResizeEvent):
         print(QResizeEvent)
